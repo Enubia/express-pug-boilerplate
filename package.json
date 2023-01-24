@@ -68,7 +68,7 @@
     "gulp-if": "^3.0.0",
     "gulp-plumber": "^1.2.1",
     "gulp-sourcemaps": "^3.0.0",
-    "gulp-strip-debug": "^4.0.0",
+    "gulp-strip-debug": "^5.0.0",
     "gulp-uglify": "^3.0.2",
     "livereload": "0.9.3",
     "nodemon": "2.0.20",
