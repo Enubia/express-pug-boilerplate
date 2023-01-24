@@ -1,0 +1,38 @@
+script( src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous" )
+
+//- our generated script files
+
+script( src='/assets/js/app.min.js' )
+
+//- toast notification library
+
+script( src='https://cdn.jsdelivr.net/npm/toastify-js' )
+script.
+    window.showToast = (
+        message,
+        success = false,
+        duration = 3000,
+        offset = { x: 0, y: 0 },
+        className = 'custom-toast',
+        escapeMarkup = true
+    ) => {
+        let color = success ? '#ff826b' : '#ff5c6f';
+
+        if (duration === -1) {
+            color = 'rgba(248, 228, 201, 0.8)'
+        }
+
+        Toastify({
+            text: message,
+            duration,
+            newWindow: true,
+            close: true,
+            gravity: 'top',
+            position: 'center',
+            backgroundColor: `linear-gradient(to right, ${color}, ${color})`,
+            stopOnFocus: true,
+            className,
+            offset,
+            escapeMarkup,
+        }).showToast();
+    }

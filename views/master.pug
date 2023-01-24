@@ -1,0 +1,26 @@
+doctype html
+html( lang="en" )
+    head
+        block head
+            block title
+
+            block meta
+
+            include head.pug
+
+        block styles
+
+    body
+        header
+            block header
+                include partials/header.pug
+
+        main
+            block content
+
+        footer
+            block footer
+                include partials/footer.pug
+
+        include partials/js.pug
+        block scripts

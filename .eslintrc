@@ -1,0 +1,153 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "sourceType": "module",
+        "project": "./tsconfig.json"
+    },
+    "plugins": [
+        "prettier",
+        "@typescript-eslint",
+        "unicorn",
+        "import",
+        "unused-imports"
+    ],
+    "rules": {
+        "prettier/prettier": [
+            "error",
+            {
+                "endOfLine": "auto"
+            }
+        ],
+        "max-len": "off",
+        "no-debugger": "warn",
+        "no-console": [
+            "warn",
+            {
+                "allow": [
+                    "warn",
+                    "error"
+                ]
+            }
+        ],
+        "prefer-const": [
+            "error",
+            {
+                "destructuring": "any",
+                "ignoreReadBeforeAssign": false
+            }
+        ],
+        "no-lonely-if": "error",
+        "no-underscore-dangle": "off",
+        "object-curly-spacing": "off",
+        "prefer-object-spread": "error",
+        "no-plusplus": "off",
+        "no-param-reassign": "warn",
+        "no-throw-literal": "warn",
+        "curly": [
+            "error",
+            "all"
+        ],
+        "dot-notation": "error",
+        "no-var": "error",
+        "object-shorthand": "error",
+        "no-useless-rename": "error",
+        "no-restricted-syntax": [
+            "error",
+            "ForInStatement",
+            "LabeledStatement",
+            "WithStatement"
+        ],
+        "require-atomic-updates": "off",
+        "no-await-in-loop": "off",
+        "class-methods-use-this": "off",
+        "no-useless-constructor": "off",
+        "eol-last": "off",
+        "no-case-declarations": "off",
+        "@typescript-eslint/no-unused-vars": [
+            "error",
+            {
+                "argsIgnorePattern": "^_"
+            }
+        ],
+        "@typescript-eslint/no-useless-constructor": "error",
+        "@typescript-eslint/no-parameter-properties": "error",
+        "@typescript-eslint/no-inferrable-types": "off",
+        "@typescript-eslint/explicit-member-accessibility": "error",
+        "@typescript-eslint/naming-convention": "off",
+        "@typescript-eslint/no-non-null-assertion": "off",
+        "@typescript-eslint/return-await": "off",
+        "import/prefer-default-export": "off",
+        "import/order": "error",
+        "import/first": "error",
+        "import/no-mutable-exports": "error",
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+                "js": "never",
+                "mjs": "never",
+                "jsx": "never",
+                "ts": "never",
+                "tsx": "never"
+            }
+        ],
+        "import/no-unresolved": [
+            2,
+            {
+                "caseSensitive": true
+            }
+        ],
+        "unicorn/error-message": "error",
+        "unicorn/escape-case": "error",
+        "unicorn/no-array-instanceof": "error",
+        "unicorn/no-new-buffer": "error",
+        "unicorn/no-unsafe-regex": "off",
+        "unicorn/number-literal-case": "error",
+        "unicorn/prefer-exponentiation-operator": "error",
+        "unicorn/prefer-includes": "error",
+        "unicorn/prefer-starts-ends-with": "error",
+        "unicorn/prefer-text-content": "error",
+        "unicorn/prefer-type-error": "error",
+        "unicorn/throw-new-error": "error",
+        "no-unused-vars": "off",
+        "unused-imports/no-unused-imports": "error",
+        "unused-imports/no-unused-vars": [
+            "warn",
+            {
+                "vars": "all",
+                "varsIgnorePattern": "^_",
+                "args": "after-used",
+                "argsIgnorePattern": "^_"
+            }
+        ],
+        "react/jsx-filename-extension": "off"
+    },
+    "env": {
+        "jest": false,
+        "mocha": false,
+        "browser": false,
+        "node": true
+    },
+    "extends": [
+        "airbnb-typescript",
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "prettier"
+    ],
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [
+                    ".js",
+                    ".jsx",
+                    ".ts",
+                    ".tsx"
+                ]
+            }
+        },
+        "import/ignore": [
+            "node_modules",
+            "\\.(coffee|scss|css|less|hbs|svg|json)$"
+        ]
+    }
+}
