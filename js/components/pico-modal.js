@@ -6,27 +6,18 @@
 (function (namespace) {
     namespace.Modal = class Modal {
         constructor(config = {}) {
-            
             this.config = {
                 isOpenClass: 'modal-is-open',
                 openingClass: 'modal-is-opening',
-                closingClass: 'modal-is-closing'
-            }
-            
-            if (Object.keys(config).length === 0) {
-                console.log('[PicoJS.Modal] using default modal classes!');
-            } else {
-                this.config = {
-                    ...this.config,
-                    ...config
-                }
+                closingClass: 'modal-is-closing',
+                animationDuration: 400, // ms
+                ...config
             }
 
-            // Config
             this.isOpenClass = this.config.isOpenClass;
             this.openingClass = this.config.openingClass;
             this.closingClass = this.config.closingClass;
-            this.animationDuration = 400; // ms
+            this.animationDuration = this.config.animationDuration;
             this.visibleModal = null;
 
             // Close with a click outside
@@ -110,4 +101,4 @@
             return document.body.scrollHeight > screen.height;
         }
     }
-})(extend('PicoJS'));
+})(extend('Pico'));

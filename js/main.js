@@ -1,10 +1,10 @@
 function extend(ns_string) {
-    window.PicoJS = window.PicoJS || {};
+    window.Pico = window.Pico || {};
 
     let parts = ns_string.split('.');
-    let parent = window.PicoJS;
+    let parent = window.Pico;
 
-    if (parts[0] === 'PicoJS') {
+    if (parts[0] === 'Pico') {
         parts = parts.slice(1);
     }
 

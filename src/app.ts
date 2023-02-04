@@ -16,6 +16,7 @@ config({
 (async () => {
 	const app = express();
 
+	// hot reloading in dev mode
 	if (process.env.NODE_ENV === 'development') {
 		// eslint-disable-next-line import/no-extraneous-dependencies, @typescript-eslint/no-var-requires
 		const livereload = require('livereload');
@@ -69,10 +70,7 @@ config({
 	app.use(express.static('public'));
 
 	// apply some of our environment variables to the app locals so that they can be used in the templates
-	app.locals.env = {
-		facebook: process.env.FB_APP_ID,
-		google: process.env.G_CLIENT_ID,
-	};
+	app.locals.env = {};
 
 	app.use(
 		bodyParser.urlencoded({

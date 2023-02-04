@@ -14,18 +14,31 @@ const concat = require('gulp-concat');
 const stripDebug = require('gulp-strip-debug');
 const uglify = require('gulp-uglify');
 
+const { pino } = require('pino');
+
+const logger = pino({
+    transport: {
+        target: 'pino-pretty',
+        options: {
+            colorize: true,
+        },
+    },
+});
+
+logger.level = 'info';
+
 const isDev = process.env.NODE_ENV === 'development';
 
 const onError = function (runner, callback) {
     return function (error) {
-        console.error(`error - ${runner}`, error);
+        logger.error(`error - ${runner}`, error);
         callback();
     };
 };
 
 const onSuccess = function (runner, callback) {
     return function () {
-        console.log(`finished - ${runner}`);
+        logger.info(`finished - ${runner}`);
         callback();
     };
 };
