@@ -19,13 +19,12 @@
             }
         ],
         
-        "class-methods-use-this": "off",
+        "class-methods-use-this": "error",
         "curly": [
             "error",
             "all"
         ],
         "dot-notation": "error",
-        "no-case-declarations": "off",
         "no-console": "error",
         "no-debugger": "error",
         "no-lonely-if": "error",
@@ -82,8 +81,16 @@
                 "caseSensitive": true
             }
         ],
-        "import/order": "error",
-        "import/prefer-default-export": "error",
+        "import/order": [
+            "error",
+            {
+                "newlines-between": "always",
+                "alphabetize": {
+                    "order": "asc",
+                    "caseInsensitive": true
+                }
+            }
+        ],
         
         "unicorn/error-message": "error",
         "unicorn/escape-case": "error",
