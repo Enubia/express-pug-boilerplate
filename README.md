@@ -1,4 +1,4 @@
-# express-ts-boilerplate
+# express-pug-boilerplate
 
 ## Tech stack used as follows
 
