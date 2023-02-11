@@ -1,8 +1,8 @@
 const path = require('node:path');
 
 require('dotenv').config({
-    path: path.join(__dirname, './config/config.env')
-})
+    path: path.join(__dirname, './config.env')
+});
 
 const { src, dest, series, task, watch } = require('gulp');
 const plumber = require('gulp-plumber');
@@ -31,7 +31,7 @@ const isDev = process.env.NODE_ENV === 'development';
 
 const onError = function (runner, callback) {
     return function (error) {
-        logger.error(`error - ${runner}`, error);
+        logger.error(error, `error - ${runner}`);
         callback();
     };
 };
@@ -44,7 +44,7 @@ const onSuccess = function (runner, callback) {
 };
 
 const scss = (done) => {
-    src('./design/scss/**/*.scss')
+    src('./design/scss/main.scss')
         .pipe(plumber(onError('scss', done)))
         .pipe(gulpif(isDev, sourcemaps.init()))
         .pipe(concat('app.min.css'))

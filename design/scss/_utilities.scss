@@ -4,22 +4,18 @@
 	align-items: center;
 }
 
-%sticky {
-	position: sticky;
-	-webkit-position: sticky;
-	z-index: 1;
-}
-
 .sticky {
 	&-top {
-		@extend %sticky;
-
+		position: sticky;
+		-webkit-position: sticky;
+		z-index: 1;
 		top: 0;
 	}
 
 	&-bottom {
-		@extend %sticky;
-
+		position: sticky;
+		-webkit-position: sticky;
+		z-index: 1;
 		bottom: 0;
 	}
 }
@@ -40,20 +36,14 @@
 	&-end {
 		text-align: end;
 	}
-}
 
-.d {
-	&-flex {
-		display: flex;
-	}
-}
-
-.text-decoration {
-	&-none {
-		text-decoration: none;
-	}
-
-	&-underline {
-		text-decoration: underline;
+	&-decoration {
+		&-none {
+			text-decoration: none;
+		}
+	
+		&-underline {
+			text-decoration: underline;
+		}
 	}
 }
