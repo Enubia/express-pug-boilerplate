@@ -243,4 +243,4 @@ This project makes use of [Husky](https://typicode.github.io/husky/#/) as the co
 
 ---
 
-If you think that this readme can be extended or is missing some features feel free to open a pull request with your adaptions. You can reach me via a new [issue](https://github.com/Enubia/express-ts-boilerplate/issues/new) or on discord Enubia#1385.
+If you think that this readme can be extended or is missing some features feel free to open a pull request with your adaptions. You can reach me via a new [issue](https://github.com/Enubia/express-pug-boilerplate/issues/new) or on discord Enubia#1385.
