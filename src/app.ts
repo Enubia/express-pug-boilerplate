@@ -102,11 +102,6 @@ config({
 		res.sendStatus(200);
 	});
 
-	app.use('/robots.txt', (_req, res, _next) => {
-		res.type('text/plain');
-		res.sendFile(path.join(__dirname, '../public/robots.txt'));
-	});
-
 	// ERROR PAGE
 	app.get('*', (_req, res) => {
 		res.status(404).render('error/404');
