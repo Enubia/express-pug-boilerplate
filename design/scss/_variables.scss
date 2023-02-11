@@ -3,6 +3,12 @@
 // Config
 // ––––––––––––––––––––
 
+// override theme colors
+$grey-hue: 205 !default;
+$primary-hue: 272 !default;
+$black: #000 !default;
+$white: #fff !default;
+
 // Set the root element for $enable-semantic-container and $enable-responsive-spacings
 $semantic-root-element: 'body' !default;
 

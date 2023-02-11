@@ -4,6 +4,10 @@
 // pico import
 @import "node_modules/@picocss/pico/scss/pico";
 
+@import "grid";
+@import "utils";
+@import "theme-switcher";
+
 ///////////////////////////////
 // if you need more control on what's being used comment the above line and uncomment everything that you need below
 ///////////////////////////////

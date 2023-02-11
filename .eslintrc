@@ -18,7 +18,7 @@
                 "endOfLine": "auto"
             }
         ],
-        
+
         "class-methods-use-this": "error",
         "curly": [
             "error",
@@ -50,7 +50,7 @@
         ],
         "prefer-object-spread": "error",
         "require-atomic-updates": "error",
-        
+
         "@typescript-eslint/explicit-member-accessibility": "error",
         "@typescript-eslint/no-inferrable-types": "error",
         "@typescript-eslint/no-unused-vars": [
@@ -61,7 +61,7 @@
         ],
         "@typescript-eslint/no-useless-constructor": "error",
         "@typescript-eslint/parameter-properties": "error",
-        
+
         "import/extensions": [
             "error",
             "ignorePackages",
@@ -91,7 +91,7 @@
                 }
             }
         ],
-        
+
         "unicorn/error-message": "error",
         "unicorn/escape-case": "error",
         "unicorn/no-instanceof-array": "error",
@@ -102,7 +102,7 @@
         "unicorn/prefer-string-starts-ends-with": "error",
         "unicorn/prefer-type-error": "error",
         "unicorn/throw-new-error": "error",
-        
+
         "unused-imports/no-unused-imports": "error"
     },
     "env": {

@@ -1,0 +1,59 @@
+.center-elements {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+%sticky {
+	position: sticky;
+	-webkit-position: sticky;
+	z-index: 1;
+}
+
+.sticky {
+	&-top {
+		@extend %sticky;
+
+		top: 0;
+	}
+
+	&-bottom {
+		@extend %sticky;
+
+		bottom: 0;
+	}
+}
+
+.drop-shadow {
+	box-shadow: 1px 4px 5px 0 #0003;
+}
+
+.text {
+	&-center {
+		text-align: center;
+	}
+
+	&-start {
+		text-align: start;
+	}
+
+	&-end {
+		text-align: end;
+	}
+}
+
+.d {
+	&-flex {
+		display: flex;
+	}
+}
+
+.text-decoration {
+	&-none {
+		text-decoration: none;
+	}
+
+	&-underline {
+		text-decoration: underline;
+	}
+}

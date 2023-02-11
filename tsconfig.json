@@ -3,7 +3,7 @@
         "module": "CommonJS",
         "target": "ES2022",
         "lib": [
-            "ES2022",
+            "ES2022"
         ],
         "outDir": "dist",
         "moduleResolution": "node",
@@ -13,6 +13,9 @@
         "resolveJsonModule": true,
         "removeComments": true
     },
+    "files": [
+        "lib.shim.d.ts"
+    ],
     "ts-node": {
         "files": true
     },
@@ -21,6 +24,6 @@
     ],
     "exclude": [
         "node_modules",
-        "dist",
+        "dist"
     ]
 }

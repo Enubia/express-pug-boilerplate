@@ -1,7 +1,8 @@
-import { NextFunction, Request, Response, Router } from 'express';
+import { Router } from 'express';
 
 export const router = Router();
 
-router.get('/', (_req: Request, res: Response, _next: NextFunction) => {
+router.get('/', (req, res, _next) => {
+	req.log.info('---- we got a request ----');
 	return res.render('pages/index');
 });

@@ -3,7 +3,7 @@
  * Taken from https://github.com/picocss/pico/blob/master/docs/js/modal.js
  * pico has no js included, this is their implementation of a modal js
  */
-(function (namespace) {
+((namespace) => {
 	namespace.Modal = class Modal {
 		constructor(config = {}) {
 			this.config = {
@@ -49,9 +49,7 @@
 		}
 
 		isModalOpen(modal) {
-			return modal.hasAttribute('open') && modal.getAttribute('open') != 'false'
-				? true
-				: false;
+			return modal.hasAttribute('open') && modal.getAttribute('open') !== 'false';
 		}
 
 		openModal(modal) {

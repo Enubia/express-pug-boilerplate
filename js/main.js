@@ -19,10 +19,20 @@ function extend(ns_string) {
 	return parent;
 }
 
-function ready(fn) {
+function documentReady(fn) {
 	if (document.readyState !== 'loading') {
 		fn();
 	} else {
 		document.addEventListener('DOMContentLoaded', fn);
 	}
 }
+
+function toggleDropShadow() {
+	if (document.body.scrollTop > 16 || document.documentElement.scrollTop > 16) {
+		document.querySelector('nav').classList.add('drop-shadow');
+	} else {
+		document.querySelector('nav').classList.remove('drop-shadow');
+	}
+}
+
+window.onscroll = () => toggleDropShadow();

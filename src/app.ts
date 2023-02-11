@@ -5,7 +5,7 @@ import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import { config } from 'dotenv';
-import express, { Request, Response, NextFunction } from 'express';
+import express from 'express';
 import { getClientIp } from 'request-ip';
 
 import logger from './helper/logger';
@@ -16,6 +16,8 @@ config({
 
 (async () => {
 	const app = express();
+
+	app.request.log = logger;
 
 	// hot reloading in dev mode
 	if (process.env.NODE_ENV === 'development') {
@@ -34,7 +36,7 @@ config({
 		app.use(connectLiveReload());
 	}
 
-	app.use((req: Request, res: Response, next: NextFunction) => {
+	app.use((req, res, next) => {
 		const ignoredRequests = [
 			'png',
 			'jpg',
@@ -57,7 +59,7 @@ config({
 				res.locals.user ? `USER ${String(res.locals.user.id)}` : 'GUEST'
 			}) path: ${req.originalUrl}`;
 
-			logger.info(logString);
+			req.log.info(logString);
 		}
 
 		return next();
@@ -111,17 +113,17 @@ config({
 	});
 
 	// error handler
-	app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
-		logger.error(err);
+	app.use((err, req, res, _next) => {
+		req.log.error(err);
 
 		res.status(500).render('error/500');
 	});
 
 	app.listen(Number(process.env.PORT), () => {
-		logger.info(`App listening on port ${process.env.PORT}`);
+		app.request.log.info(`App listening on port ${process.env.PORT}`);
 	});
 })();
 
-process.on('uncaughtException', (err) => {
-	logger.error(err);
+process.on('uncaughtException', (err, source) => {
+	logger.error(err, source);
 });

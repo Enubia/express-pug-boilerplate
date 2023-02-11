@@ -1,9 +1,9 @@
 @import "includes";
 
-body {
-    .center-elements {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+nav {
+	background-color: var(--background-color);
+}
+
+footer {
+	border-top: 1px solid $grey-200;
 }

@@ -11,9 +11,10 @@ html(lang='en' data-theme='light')
         block styles
 
     body
+        block navbar
+            include partials/navbar.pug
         header
             block header
-                include partials/header.pug
 
         main
             block content
