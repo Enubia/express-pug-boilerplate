@@ -19,7 +19,6 @@
             }
         ],
 
-        "class-methods-use-this": "error",
         "curly": [
             "error",
             "all"
@@ -51,7 +50,6 @@
         "prefer-object-spread": "error",
         "require-atomic-updates": "error",
 
-        "@typescript-eslint/explicit-member-accessibility": "error",
         "@typescript-eslint/no-inferrable-types": "error",
         "@typescript-eslint/no-unused-vars": [
             "error",
