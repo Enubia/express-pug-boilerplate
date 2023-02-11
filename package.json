@@ -4,15 +4,16 @@
 	"description": "A boilertplate template for express applications with typescript support",
 	"main": "dist/app.js",
 	"scripts": {
-		"build:all": "tsc && gulp",
+		"build": "tsc --project tsconfig.production.json && gulp",
 		"build:assets": "gulp",
-		"build:ts": "tsc",
+		"build:ts": "tsc && tsc-alias",
 		"clean": "rimraf ./dist ./node_modules",
 		"dev": "nodemon",
 		"lint": "eslint --cache --ext .ts --ignore-path .eslintignore src/",
 		"lint:scss": "stylelint ./design/**/*.scss",
-		"start": "node dist/app.js",
+		"postbuild": "tsc-alias",
 		"prepare": "test -d node_modules/husky && husky install",
+		"start": "node dist/app.js",
 		"test": "mocha",
 		"watch:assets": "gulp watch"
 	},
@@ -61,7 +62,7 @@
 		"eslint-config-prettier": "8.6.0",
 		"eslint-import-resolver-alias": "1.1.2",
 		"eslint-import-resolver-node": "0.3.7",
-		"eslint-import-resolver-typescript": "3.5.3",
+		"eslint-import-resolver-typescript": "^3.5.3",
 		"eslint-plugin-import": "2.27.5",
 		"eslint-plugin-node": "11.1.0",
 		"eslint-plugin-prettier": "4.2.1",
@@ -89,6 +90,8 @@
 		"stylelint-config-prettier-scss": "0.0.1",
 		"stylelint-config-standard-scss": "6.1.0",
 		"ts-node": "10.9.1",
+		"tsc-alias": "^1.8.2",
+		"tsconfig-paths": "^4.1.2",
 		"typescript": "4.9.5"
 	},
 	"lint-staged": {

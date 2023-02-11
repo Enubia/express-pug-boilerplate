@@ -1,5 +1,7 @@
 import { pino } from 'pino';
 
+import config from '@config/index';
+
 const logger = pino({
 	transport: {
 		target: 'pino-pretty',
@@ -9,6 +11,6 @@ const logger = pino({
 	},
 });
 
-logger.level = process.env.LOG_LEVEL || 'info';
+logger.level = config.LOG_LEVEL;
 
 export default logger;

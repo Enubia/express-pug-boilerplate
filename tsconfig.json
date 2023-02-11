@@ -12,7 +12,13 @@
         "esModuleInterop": true,
         "resolveJsonModule": true,
         "removeComments": true,
-        "sourceMap": true
+        "sourceMap": true,
+        "baseUrl": ".",
+        "paths": {
+            "@config/*": ["src/config/*"],
+            "@handler/*": ["src/handler/*"],
+            "@helper/*": ["src/helper/*"]
+        }
     },
     "files": [
         "lib.shim.d.ts"
@@ -21,7 +27,7 @@
         "files": true
     },
     "include": [
-        "src/**/*.ts"
+        "src/**/*.ts",
     ],
     "exclude": [
         "node_modules",

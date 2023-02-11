@@ -4,15 +4,11 @@ import path from 'node:path';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
-import { config } from 'dotenv';
 import express from 'express';
 import { getClientIp } from 'request-ip';
 
+import config from './config';
 import logger from './helper/logger';
-
-config({
-	path: path.join(__dirname, '../config/config.env'),
-});
 
 (async () => {
 	const app = express();
@@ -20,7 +16,7 @@ config({
 	app.request.log = logger;
 
 	// hot reloading in dev mode
-	if (process.env.NODE_ENV === 'development') {
+	if (config.ENVIRONMENT === 'development') {
 		// eslint-disable-next-line import/no-extraneous-dependencies, @typescript-eslint/no-var-requires
 		const livereload = require('livereload');
 		// eslint-disable-next-line import/no-extraneous-dependencies, @typescript-eslint/no-var-requires
@@ -114,8 +110,8 @@ config({
 		res.status(500).render('error/500');
 	});
 
-	app.listen(Number(process.env.PORT), () => {
-		app.request.log.info(`App listening on port ${process.env.PORT}`);
+	app.listen(Number(config.PORT), () => {
+		app.request.log.info(`App listening on port ${config.PORT}`);
 	});
 })();
 

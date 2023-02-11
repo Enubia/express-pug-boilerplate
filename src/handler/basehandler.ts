@@ -1,7 +1,7 @@
 import { Response } from 'express';
 import { rateLimit, RateLimitRequestHandler } from 'express-rate-limit';
 
-import logger from '../helper/logger';
+import logger from '@helper/logger';
 
 type ErrorParams = {
 	res: Response;

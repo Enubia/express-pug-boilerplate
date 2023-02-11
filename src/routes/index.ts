@@ -1,6 +1,6 @@
 import { Router } from 'express';
 
-import HomeHandler from '../handler/homehandler';
+import HomeHandler from '@handler/homehandler';
 
 const homeHandler = new HomeHandler();
 
