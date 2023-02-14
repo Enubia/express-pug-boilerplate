@@ -82,7 +82,7 @@
 		"livereload": "0.9.3",
 		"mocha": "10.2.0",
 		"nodemon": "2.0.20",
-		"prettier": "2.8.3",
+		"prettier": "2.8.4",
 		"pug-lint": "^2.6.0",
 		"rimraf": "4.1.2",
 		"sass": "1.58.0",
