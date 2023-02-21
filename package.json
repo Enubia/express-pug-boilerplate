@@ -85,7 +85,7 @@
 		"prettier": "2.8.4",
 		"pug-lint": "^2.6.0",
 		"rimraf": "4.1.2",
-		"sass": "1.58.0",
+		"sass": "1.58.3",
 		"stylelint": "14.16.1",
 		"stylelint-config-prettier-scss": "0.0.1",
 		"stylelint-config-standard-scss": "6.1.0",
