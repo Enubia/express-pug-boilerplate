@@ -7,7 +7,7 @@ require('dotenv').config({
 const { src, dest, series, task, watch } = require('gulp');
 const plumber = require('gulp-plumber');
 const prefix = require('gulp-autoprefixer');
-const sass = require('gulp-dart-sass');
+const sass = require('gulp-sass')(require('sass'));
 const sourcemaps = require('gulp-sourcemaps');
 const gulpif = require('gulp-if');
 const concat = require('gulp-concat');
@@ -37,8 +37,8 @@ const scss = (done) => {
         .pipe(concat('app.min.css'))
         .pipe(
             sass({
-                includePaths: ['./design/scss/**/*.scss', 'node_modules/@picocss/pico/scss/'],
-                outputStyle: 'compressed'
+                includePaths: ['./design/scss/', 'node_modules/@picocss/pico/scss/'],
+                outputStyle: 'compressed',
             })
         )
         .pipe(
