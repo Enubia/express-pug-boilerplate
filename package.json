@@ -4,13 +4,15 @@
   "description": "A boilertplate template for express applications with typescript support",
   "main": "dist/src/app.js",
   "scripts": {
-    "build": "tsc && npm run gulp",
+    "build:all": "npm run build:ts && npm run build:assets",
+    "build:assets": "gulp",
+    "build:ts": "tsc",
     "clean": "rimraf ./dist ./coverage ./node_modules",
-    "compile": "tsc",
     "dev": "nodemon",
-    "gulp": "gulp",
     "lint": "eslint --cache --ext .ts --ignore-path .eslintignore src/",
+    "lint:scss": "stylelint ./design/**/*.scss",
     "start": "node dist/app.js",
+    "prepare": "husky install",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "gulp watch"
   },
@@ -38,7 +40,7 @@
     "request-ip": "3.3.0"
   },
   "devDependencies": {
-    "@picocss/pico": "^1.5.7",
+    "@picocss/pico": "1.5.7",
     "@types/connect-livereload": "0.6.0",
     "@types/cookie-parser": "1.4.3",
     "@types/cors": "2.8.13",
@@ -71,11 +73,20 @@
     "gulp-sourcemaps": "3.0.0",
     "gulp-strip-debug": "4.0.0",
     "gulp-uglify": "3.0.2",
+    "husky": "8.0.3",
+    "lint-staged": "13.1.0",
     "livereload": "0.9.3",
     "nodemon": "2.0.20",
     "prettier": "2.8.3",
     "rimraf": "4.1.2",
+    "stylelint": "14.16.1",
+    "stylelint-config-prettier-scss": "0.0.1",
+    "stylelint-config-standard-scss": "6.1.0",
     "ts-node": "10.9.1",
     "typescript": "4.9.5"
+  },
+  "lint-staged": {
+    "src/**/*.ts": "eslint",
+    "design/**/*.scss": "stylelint"
   }
 }
