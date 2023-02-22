@@ -6,17 +6,22 @@
 (function (namespace) {
     namespace.Modal = class Modal {
         constructor(config = {}) {
-            if (Object.keys(config).length === 0) {
-                console.log('[PicoJS.Modal] using default modal classes!');
-            }
-    
+            
             this.config = {
-                ...config,
                 isOpenClass: 'modal-is-open',
                 openingClass: 'modal-is-opening',
                 closingClass: 'modal-is-closing'
             }
-    
+            
+            if (Object.keys(config).length === 0) {
+                console.log('[PicoJS.Modal] using default modal classes!');
+            } else {
+                this.config = {
+                    ...this.config,
+                    ...config
+                }
+            }
+
             // Config
             this.isOpenClass = this.config.isOpenClass;
             this.openingClass = this.config.openingClass;
