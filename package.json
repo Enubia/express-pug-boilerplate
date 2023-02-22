@@ -2,7 +2,7 @@
   "name": "express-ts-boilerplate",
   "version": "1.0.0",
   "description": "A boilertplate template for express applications with typescript support",
-  "main": "dist/src/app.js",
+  "main": "dist/app.js",
   "scripts": {
     "build:all": "npm run build:ts && npm run build:assets",
     "build:assets": "gulp",
