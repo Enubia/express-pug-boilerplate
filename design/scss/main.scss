@@ -1,0 +1,9 @@
+@import "includes";
+
+body {
+    .center-elements {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

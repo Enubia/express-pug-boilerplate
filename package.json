@@ -5,13 +5,14 @@
   "main": "dist/src/app.js",
   "scripts": {
     "build": "tsc && npm run gulp",
-    "compile": "tsc",
-    "gulp": "gulp",
     "clean": "rimraf ./dist ./coverage ./node_modules",
+    "compile": "tsc",
     "dev": "nodemon",
+    "gulp": "gulp",
     "lint": "eslint --cache --ext .ts --ignore-path .eslintignore src/",
     "start": "node dist/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "gulp watch"
   },
   "keywords": [
     "express",
@@ -27,7 +28,6 @@
   },
   "dependencies": {
     "body-parser": "1.20.1",
-    "bootstrap": "5.2.3",
     "cookie-parser": "1.4.6",
     "cors": "2.8.5",
     "dotenv": "16.0.3",
@@ -38,6 +38,7 @@
     "request-ip": "3.3.0"
   },
   "devDependencies": {
+    "@picocss/pico": "^1.5.7",
     "@types/connect-livereload": "0.6.0",
     "@types/cookie-parser": "1.4.3",
     "@types/cors": "2.8.13",
