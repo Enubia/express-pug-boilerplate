@@ -35,7 +35,7 @@
     "dotenv": "16.0.3",
     "express": "4.18.2",
     "pino": "8.11.0",
-    "pino-pretty": "9.4.0",
+    "pino-pretty": "10.0.0",
     "pug": "3.0.2",
     "request-ip": "3.3.0"
   },
